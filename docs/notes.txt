@@ -1,0 +1,17 @@
+Notes:
+
+java -jar jenkins-plugin-manager-*.jar --war /usr/lib/jenkins/jenkins.war --plugin-file /opt/jenkins-plugins/plugins.txt --plugins delivery-pipeline-plugin:1.3.2 deployit-plugin
+
+Alternatively you can also use maven:
+mvn clean install 
+java -jar plugin-management-cli/target/jenkins-plugin-manager-*.jar --war /file/path/jenkins.war --plugin-file /file/path/plugins.txt --plugins delivery-pipeline-plugin:1.3.2 deployit-plugin
+
+Jenkins Plugin Manager Tool
+See https://github.com/jenkinsci/plugin-installation-manager-tool
+
+Usage:
+
+java -jar lib/jenkins-plugin-manager-*.jar --help
+java -jar lib/jenkins-plugin-manager-*.jar
+sudo java -jar lib/jenkins-plugin-manager-*.jar --war /usr/lib/jenkins/jenkins.war --list > plugins.out
+
