@@ -11,6 +11,7 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
+                sh 'rclone version'
             }
         }
         stage('Deploy') {
