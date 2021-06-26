@@ -11,7 +11,6 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
-                sh 'lib/jfrog'
             }
         }
         stage('Deploy') {
