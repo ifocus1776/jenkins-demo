@@ -10,8 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ls'
-                sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
-                sh 'sudo yum list | grep rclone'
+                sh 'java -jar lib/jenkins-plugin-manager-*.jar --list'
             }
         }
         stage('Deploy') {
