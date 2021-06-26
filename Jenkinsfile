@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ls'
-                java -jar lib/jenkins-plugin-manager-*.jar --help
+                sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
             }
         }
         stage('Deploy') {
