@@ -32,7 +32,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'gradle --version'
+                sh 'ls'
             }
         }
     }
