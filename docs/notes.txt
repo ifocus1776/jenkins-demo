@@ -15,3 +15,27 @@ java -jar lib/jenkins-plugin-manager-*.jar --help
 java -jar lib/jenkins-plugin-manager-*.jar
 sudo java -jar lib/jenkins-plugin-manager-*.jar --war /usr/lib/jenkins/jenkins.war --list > plugins.out
 
+Example Jenkinsfile:
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
