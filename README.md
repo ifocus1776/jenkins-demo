@@ -6,6 +6,9 @@ See https://github.com/jenkinsci/plugin-installation-manager-tool
 
 Usage:
 
+Login to the Jenkins Controller (Master) host 
+Pull down the latest Jenkins Plugins using the Jenkins CLI
+
 ```
 java -jar lib/jenkins-plugin-manager-*.jar --help
 
