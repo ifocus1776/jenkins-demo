@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'ls'
-                sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
+                sh 'java -jar lib/jenkins-plugin-manager-*.jar --plugin-file -f latest/plugins.txt'
             }
         }
         stage('Deploy') {
