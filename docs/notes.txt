@@ -47,3 +47,4 @@ sudo yum update && sudo yum install jfrog-artifactory-pro
 
 Download JFrog CLI:
 curl -fL https://getcli.jfrog.io | sh
+
