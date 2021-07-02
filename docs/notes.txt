@@ -48,3 +48,38 @@ sudo yum update && sudo yum install jfrog-artifactory-pro
 Download JFrog CLI:
 curl -fL https://getcli.jfrog.io | sh
 
+Jenkins REST API:
+
+curl -X POST \
+		--data "<jenkins><install plugin='${name}@latest' /></jenkins>" \
+		--header 'Content-Type: text/xml' \
+		http://localhost:8080/pluginManager/installNecessaryPlugins
+
+There are multiple ways to list your Jenkins Plugins:
+
+Way 1: Script console(groovy code):
+go to http:<Jenkins_URl>/script
+Run below command:
+
+Jenkins.instance.pluginManager.plugins.each{
+  plugin ->
+    println ("${plugin.getShortName()}")
+}
+Way 2: Command CLI
+Download command-CLI jar from : http://<Jenkins_URL>/jnlpJars/jenkins-cli.jar
+Run below command:
+java -jar jenkins-cli.jar -s http://<JENKINS_URL>/ list-plugins --username "<Jenkins_USERNAME>" --password "<Jenkins_Password>"
+
+Way 3: Jenkins Python API
+
+import jenkins
+import json
+server = jenkins.Jenkins('<jenkinsurl>', username='<Jenkins_user>', password='<Jenkins_User_password>')
+all_plugins_info=server.get_plugins_info()
+for each_plugin in all_plugins_info:
+    print each_plugin['shortName']
+
+
+$ curl -u "<admin>:<pwd>" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+Result:
+Jenkins-Crumb:4b4f34e04e4ffe60c2ca15d6fc8e50f3e8041061fe5d82742169077ad6d98036
