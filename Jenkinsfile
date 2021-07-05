@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'java -jar lib/jenkins-plugin-manager-*.jar --war /usr/local/opt/jenkins/libexec/jenkins.war --plugin-file latest/plugins.txt -d /var/tmp/jenkins/ref/plugins'
-                sh '/var/tmp/jenkins/ref/plugins'
+                sh 'ls -al /var/tmp/jenkins/ref/plugins'
             }
         }
     }

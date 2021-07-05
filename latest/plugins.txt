@@ -1,1 +1,3 @@
 puppet:latest
+ant:latest
+ansible-tower:latest
