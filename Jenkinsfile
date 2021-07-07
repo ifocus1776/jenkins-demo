@@ -12,14 +12,12 @@ pipeline {
                 echo 'Testing..'
                 sh 'ls'
                 sh 'java -jar lib/jenkins-plugin-manager-*.jar --help'
-                sh 'java -jar lib/jenkins-plugin-manager-*.jar --war /usr/share/jenkins/jenkins.war --view-all-security-warnings -d /var/tmp/jenkins/ref/plugins'
+                sh 'java -jar lib/jenkins-plugin-manager-*.jar --war /usr/lib/jenkins/jenkins.war --view-all-security-warnings'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'java -jar lib/jenkins-plugin-manager-*.jar --war /usr/local/opt/jenkins/libexec/jenkins.war --plugin-file latest/plugins.txt -d /var/tmp/jenkins/ref/plugins'
-                sh 'ls -al /var/tmp/jenkins/ref/plugins'
             }
         }
     }
