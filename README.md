@@ -70,7 +70,7 @@ curl -X POST \
 
 There are multiple ways to list your Jenkins Plugins:
 
-Way 1: Script console(groovy code):
+1: Script console(groovy code):
 go to http:<Jenkins_URl>/script
 Run below command:
 
@@ -78,12 +78,13 @@ Jenkins.instance.pluginManager.plugins.each{
   plugin ->
     println ("${plugin.getShortName()}")
 }
-Way 2: Command CLI
+
+2: Command CLI
 Download command-CLI jar from : http://<Jenkins_URL>/jnlpJars/jenkins-cli.jar
 Run below command:
 java -jar jenkins-cli.jar -s http://<JENKINS_URL>/ list-plugins --username "<Jenkins_USERNAME>" --password "<Jenkins_Password>"
 
-Way 3: Jenkins Python API
+3: Jenkins Python API
 
 import jenkins
 import json
