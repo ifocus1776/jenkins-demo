@@ -95,5 +95,7 @@ for each_plugin in all_plugins_info:
 
 
 $ curl -u "<admin>:<pwd>" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
-Result:
-Jenkins-Crumb:4b4f34e04e4ffe60c2ca15d6fc8e50f3e8041061fe5d82742169077ad6d98036
+
+	Result:
+
+	Jenkins-Crumb:4b4f34e04e4ffe60c2777ca15d6fc8e50f3e44461fe5d82742168247ad6d98379
