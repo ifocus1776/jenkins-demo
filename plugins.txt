@@ -4,3 +4,4 @@ ansible:latest
 docker:latest
 maven:latest
 beer:latest
+git:latest
